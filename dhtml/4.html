@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add Your Numbers</h1>
+    <form action="" method="post" onsubmit="addNumbers(event)">
+        <div id="inputs">
+            <input type="text" name="num" placeholder="Enter a number"> <br>
+            <input type="text" name="num" placeholder="Enter another number"> <br>
+        </div>
+        <input type="submit" value="Add">
+        <button type="button" onclick="addMore()">Add More</button>
+    </form>
+    <h2 id="res"></h2>
+
+    <script>
+        function addMore(){
+            let newInput = document.createElement("input")
+            newInput.type = "text"
+            newInput.name = "num"
+            newInput.placeholder = "Enter another number"
+
+            newBr = document.createElement("br")
+
+            let rmvBtn = document.createElement("button")
+            rmvBtn.innerHTML = "X"
+            rmvBtn.onclick = function(){
+                newInput.remove()
+                newBr.remove()
+                rmvBtn.remove()
+            }
+
+            document.getElementById("inputs").append(newInput)
+            document.getElementById("inputs").append(rmvBtn)
+            document.getElementById("inputs").append(newBr)
+        }
+        function addNumbers(e){
+            e.preventDefault();
+
+            let nums = document.getElementsByName("num")
+            // console.log(nums);
+            
+            let sum = 0;
+            for(let n of nums){
+                let a = Number(n.value)
+                // console.log(a);
+                sum += a
+            }
+            document.getElementById("res").innerHTML = "Sum = "+sum
+        }
+    </script>
+</body>
+</html>

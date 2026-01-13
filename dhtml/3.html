@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post" onsubmit="addFood(event)">
+        <input type="text" id="food" placeholder="Enter a food name">
+        <input type="submit" value="Add">
+    </form>
+    <p>List of Foods</p>
+    <ul id="foods">
+        <li>Rice</li>
+        <li>Roti</li>
+    </ul>
+    <a href="https://google.com" target="_blank" onclick="test(event)">Google</a>
+    <script>
+        function addFood(e){
+            e.preventDefault()
+            let food = document.getElementById("food").value
+            if(food == ""){
+                alert("Enter food name")
+                return
+            }
+            let newLi = document.createElement("li")
+            newLi.innerHTML = food
+
+            let removeBtn = document.createElement("button")
+            removeBtn.innerHTML = "X"
+            removeBtn.onclick = function(){
+                removeBtn.parentElement.remove()
+            }
+            newLi.append(removeBtn)
+            
+            document.getElementById("foods").append(newLi)
+
+            document.getElementById("food").value = ""
+        }
+
+        function test(e){
+            e.preventDefault()
+        }
+    </script>
+</body>
+</html>

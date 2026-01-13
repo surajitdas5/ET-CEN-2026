@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{
+            background-color: red;
+            color: white;
+            border-radius: 8px;
+            border: none;
+        }
+        .btn-lg{
+            font-size: 20px;
+            padding: 20px;
+        }
+        .my-class{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+    <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus adipisci alias fugiat, quaerat excepturi consectetur sit. Adipisci officiis atque vitae officia mollitia laborum porro quae numquam. Assumenda odio ipsam exercitationem.</p>
+    <button onclick="show()">Show</button>
+    <button onclick="hide()">Hide</button>
+    <button onclick="toggle()">Toggle</button>
+
+    <script>
+        let btn = document.createElement("button")
+        btn.innerHTML = "Click"
+        // btn.style.backgroundColor = "blue"
+        // btn.style.color = "white"
+        btn.className = "btn"
+        // btn.className = "btn-lg"
+        // btn.classList.add("btn-lg")
+        btn.onclick = function(){
+            alert("Button is clicked")
+        }
+        document.getElementById("container").append(btn)
+
+    function show(){
+        document.getElementById("text").classList.remove("my-class")
+    }
+    function hide(){
+        document.getElementById("text").classList.add("my-class")
+    }
+    function toggle() {
+        document.getElementById("text").classList.toggle("my-class")
+    }
+    </script>
+</body>
+</html>
