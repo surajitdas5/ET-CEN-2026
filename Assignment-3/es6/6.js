@@ -56,7 +56,17 @@ let nums = [2, 5, 3, 10, 17, 13, 9, 3, 8]
 //     }
 // }, nums[0])
 
-let largest = nums.reduce((largest, n) => largest > n? largest:n, nums[0])
+// let largest = nums.reduce((largest, n) => largest > n? largest:n, nums[0])
+// console.log(largest)
 
 
-console.log(largest)
+// sort
+// nums.sort((a,b)=>{
+//     if(a>b) return 1
+//     else if(b>a) return -1
+//     else 0
+// })
+
+nums.sort((a,b)=>(a-b))
+
+console.log(nums);
