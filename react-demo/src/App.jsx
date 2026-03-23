@@ -4,12 +4,19 @@ import './App.css';
 
 import Intro from "./pages/Intro";
 import EventEx from "./pages/EventEx";
+import Calc from "./pages/Calc";
+import Student from "./pages/Student";
+import ApiCall from "./pages/ApiCall";
 
 function App() {
   return (
     <>
-      <Intro />
-      <EventEx />
+      {/* <Intro /> */}
+      {/* <EventEx /> */}
+      {/* <EventEx /> */}
+      {/* <Calc /> */}
+      {/* <Student /> */}
+      <ApiCall />
     </>
   )
 }
