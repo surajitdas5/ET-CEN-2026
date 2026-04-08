@@ -5,6 +5,7 @@ import EventDetails from "./pages/EventDetails";
 import SearchResult from "./pages/SearchResult";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
+import AddEvent from "./pages/AddEvent";
 
 
 const router = createBrowserRouter([
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
             { path: "/", element: <Home /> },
             { path: "/signup", element: <SignUp /> },
             { path: "/signin", element: <SignIn /> },
+            { path: "/add-event", element: <AddEvent /> },
             { path: "/event/:eid", element: <EventDetails /> },
             { path: "/event/search/:searchKey", element: <SearchResult /> },
         ]
